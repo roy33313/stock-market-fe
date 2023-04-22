@@ -29,7 +29,8 @@ const inputValidation = (
     return { error: true, message: "Phone Number should only 10 numbers" };
   }
 
-  if (!email.match(/^[A-Za-z._\-0-9]*[@][A-Za-z]*[.][a-z]{2,4}$/)) {
+  // eslint-disable-next-line no-useless-escape
+  if (!email.match(/^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)?$/)) {
     return { error: true, message: "Please enter valid email" };
   }
 
