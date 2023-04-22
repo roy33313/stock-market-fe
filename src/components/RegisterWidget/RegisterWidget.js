@@ -1,22 +1,21 @@
 import React from "react";
+import bgImage from "../../assets/images/login/Login Image.jpg"
+
 
 export default function RegisterWidget() {
   return (
-    <section className="h-100 ">
-      <div className="container py-5 h-100">
+    <section className="h-100 " style={{ backgroundColor: "#404040" }}>
+      <div className="container  h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col">
-            <div className="card card-registration my-4">
+            <div className="card card-registration my-4 " style={{ borderRadius: "1rem" }}>
               <div className="row g-0">
-                <div className="col-xl-6 d-none d-xl-block">
+                <div className="col-xs-6 col-sm-5 d-none d-sm-block">
                   <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                    src={bgImage}
                     className="img-fluid"
                     alt="register"
-                    style={{
-                      borderTopLeftRadius: ".25rem",
-                      borderBottomLeftRadius: ".25rem",
-                    }}
+                    style={{ borderRadius: "1rem 0 0 1rem" }}
                   />
                 </div>
                 <div className="col-xl-6">
