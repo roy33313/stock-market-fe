@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import { inputValidation } from "../../utils/registerUtils";
-=======
-import React from "react";
-import bgImage from "../../assets/images/login/Login Image.jpg"
-
->>>>>>> 74d12a5c2aa3a4bd71ef1a4c800b36bc2fd07048
+import bgImage from "../../assets/images/login/Login Image.jpg";
 
 export default function RegisterWidget() {
   const [firstName, setFirstName] = useState("");
@@ -52,7 +47,10 @@ export default function RegisterWidget() {
       <div className="container  h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col">
-            <div className="card card-registration my-4 " style={{ borderRadius: "1rem" }}>
+            <div
+              className="card card-registration my-4 "
+              style={{ borderRadius: "1rem" }}
+            >
               <div className="row g-0">
                 <div className="col-xs-6 col-sm-5 d-none d-sm-block">
                   <img
