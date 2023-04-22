@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import NavBar from "../components/NavBar/NavBar";
 import LoginWidget from "../components/LoginWidget/LoginWidget";
