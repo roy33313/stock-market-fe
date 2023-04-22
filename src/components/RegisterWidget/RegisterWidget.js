@@ -1,8 +1,52 @@
+<<<<<<< HEAD
+import React, { useState } from "react";
+import { inputValidation } from "../../utils/registerUtils";
+=======
 import React from "react";
 import bgImage from "../../assets/images/Register/Register Image.jpg"
 
+>>>>>>> 74d12a5c2aa3a4bd71ef1a4c800b36bc2fd07048
 
 export default function RegisterWidget() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phoneNo, setPhoneNo] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleRegistration = () => {
+    if (inputValidation()) {
+      //database kaam
+    } else {
+      alert("invalid credentials");
+    }
+  };
+
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
+
+  const handlePhoneNoChange = (event) => {
+    setPhoneNo(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleConfirmPasswordChange = (event) => {
+    setConfirmPassword(event.target.value);
+  };
+
   return (
     <section className="h-100 " style={{ backgroundColor: "#404040" }}>
       <div className="container  h-100">
@@ -30,6 +74,7 @@ export default function RegisterWidget() {
                             type="text"
                             id="form3Example1m"
                             className="form-control form-control-lg"
+                            onChange={handleFirstNameChange}
                           />
                           <label
                             className="form-label"
@@ -45,6 +90,7 @@ export default function RegisterWidget() {
                             type="text"
                             id="form3Example1n"
                             className="form-control form-control-lg"
+                            onChange={handleLastNameChange}
                           />
                           <label
                             className="form-label"
@@ -62,6 +108,7 @@ export default function RegisterWidget() {
                             type="text"
                             id="form3Example1m1"
                             className="form-control form-control-lg"
+                            onChange={handleEmailChange}
                           />
                           <label
                             className="form-label"
@@ -77,6 +124,7 @@ export default function RegisterWidget() {
                             type="text"
                             id="form3Example1n1"
                             className="form-control form-control-lg"
+                            onChange={handlePhoneNoChange}
                           />
                           <label
                             className="form-label"
@@ -89,9 +137,10 @@ export default function RegisterWidget() {
                     </div>
                     <div className="form-outline mb-4">
                       <input
-                        type="text"
+                        type="password"
                         id="form3Example8"
                         className="form-control form-control-lg"
+                        onChange={handlePasswordChange}
                       />
                       <label className="form-label" htmlFor="form3Example8">
                         Password
@@ -100,9 +149,10 @@ export default function RegisterWidget() {
 
                     <div className="form-outline mb-4">
                       <input
-                        type="text"
+                        type="password"
                         id="form3Example8"
                         className="form-control form-control-lg"
+                        onChange={handleConfirmPasswordChange}
                       />
                       <label className="form-label" htmlFor="form3Example8">
                         Confirm Password
@@ -120,6 +170,7 @@ export default function RegisterWidget() {
                     <button
                       type="button"
                       className="btn btn-dark btn-lg btn-block"
+                      onClick={handleRegistration}
                     >
                       Submit form
                     </button>
