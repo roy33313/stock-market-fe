@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { inputValidation } from "../../utils/registerUtils";
 import bgImage from "../../assets/images/Register/Register Image.jpg";
+import { register } from "../../serverQueries/register/register";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterWidget() {
   const [firstName, setFirstName] = useState("");
@@ -9,6 +11,8 @@ export default function RegisterWidget() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleRegistration = () => {
     const validate = inputValidation(
@@ -22,6 +26,20 @@ export default function RegisterWidget() {
 
     if (validate.error) {
       alert(validate.message);
+    } else {
+      const response = register({
+        firstName,
+        lastName,
+        phoneNo,
+        email,
+        password,
+        confirmPassword,
+      });
+      if (response.error) {
+        alert(response.message);
+      } else {
+        navigate("/login");
+      }
     }
   };
 
