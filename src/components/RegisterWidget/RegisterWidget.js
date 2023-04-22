@@ -1,11 +1,9 @@
-<<<<<<< HEAD
+
 import React, { useState } from "react";
 import { inputValidation } from "../../utils/registerUtils";
-=======
-import React from "react";
 import bgImage from "../../assets/images/Register/Register Image.jpg"
 
->>>>>>> 74d12a5c2aa3a4bd71ef1a4c800b36bc2fd07048
+
 
 export default function RegisterWidget() {
   const [firstName, setFirstName] = useState("");
