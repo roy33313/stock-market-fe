@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/home" element={<Home />} />
+        <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/aboutus" element={<AboutUs />} />
         <Route exact path="/contactus" element={<ContactUs />} />
       </Routes>

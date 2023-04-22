@@ -38,13 +38,13 @@ export default function NavBar() {
             ) : (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link mx-2" to="/home">
-                    Predictions
+                  <Link className="nav-link mx-2" to="/profile">
+                    Profile
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link mx-2" to="/home">
-                    Punk
+                    Predictions
                   </Link>
                 </li>
               </>
