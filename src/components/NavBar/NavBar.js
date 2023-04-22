@@ -11,7 +11,7 @@ export default function NavBar() {
               <Link
                 className="nav-link mx-2 active"
                 aria-current="page"
-                to="/login"
+                to="/home"
               >
                 Home
               </Link>
@@ -27,12 +27,12 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link mx-2" to="/login">
+              <Link className="nav-link mx-2" to="/aboutus">
                 About us
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link mx-2" to="/login">
+              <Link className="nav-link mx-2" to="/contactus">
                 Contact us
               </Link>
             </li>

@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function Login() {
+import { useNavigate } from "react-router-dom";
+import { login } from "../../serverQueries/login/login";
+import { isAuthenticated } from "../../serverQueries/auth/auth";
+
+export default function LoginWidget() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    await login({ email: email, password: password });
+    if (isAuthenticated()) {
+      navigate("/home");
+    } else {
+      window.alert("Invalid credentials");
+    }
+  };
+
+  const handleEmailInput = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePasswordInput = (event) => {
+    setPassword(event.target.value);
+  };
+
   return (
     <section className="vh-100" style={{ backgroundColor: "#eee" }}>
       <div className="container  h-100">
@@ -37,6 +61,7 @@ export default function Login() {
                           type="email"
                           id="form2Example17"
                           className="form-control form-control-lg"
+                          onChange={handleEmailInput}
                         />
                         <label className="form-label" htmlFor="form2Example17">
                           Email address
@@ -47,6 +72,7 @@ export default function Login() {
                           type="password"
                           id="form2Example27"
                           className="form-control form-control-lg"
+                          onChange={handlePasswordInput}
                         />
                         <label className="form-label" htmlFor="form2Example27">
                           Password
@@ -56,6 +82,7 @@ export default function Login() {
                         <button
                           className="btn btn-dark btn-lg btn-block"
                           type="button"
+                          onClick={handleLogin}
                         >
                           Login
                         </button>

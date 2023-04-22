@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Register() {
+export default function RegisterWidget() {
   return (
     <section>
       <div className="container py-2 h-100">
