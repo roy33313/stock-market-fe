@@ -11,10 +11,17 @@ export default function RegisterWidget() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleRegistration = () => {
-    if (inputValidation()) {
-      //database kaam
-    } else {
-      alert("invalid credentials");
+    const validate = inputValidation(
+      firstName,
+      lastName,
+      phoneNo,
+      email,
+      password,
+      confirmPassword
+    );
+
+    if (validate.error) {
+      alert(validate.message);
     }
   };
 
