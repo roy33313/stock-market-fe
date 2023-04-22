@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../../assets/images/login/Login Image.jpg"
+import bgImage from "../../assets/images/Register/Register Image.jpg"
 
 
 export default function RegisterWidget() {
@@ -21,7 +21,7 @@ export default function RegisterWidget() {
                 <div className="col-xl-6">
                   <div className="card-body p-md-5 text-black">
                     <h3 className="mb-5 text-uppercase">
-                      Student registration form
+                      Sign Up
                     </h3>
                     <div className="row">
                       <div className="col-md-6 mb-4">
