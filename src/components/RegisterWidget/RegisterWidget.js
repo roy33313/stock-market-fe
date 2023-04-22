@@ -68,7 +68,7 @@ export default function RegisterWidget() {
                             className="form-label"
                             htmlFor="form3Example1m1"
                           >
-                            Mother's name
+                            Email
                           </label>
                         </div>
                       </div>
@@ -83,7 +83,7 @@ export default function RegisterWidget() {
                             className="form-label"
                             htmlFor="form3Example1n1"
                           >
-                            Father's name
+                            Phone Number
                           </label>
                         </div>
                       </div>
@@ -95,126 +95,35 @@ export default function RegisterWidget() {
                         className="form-control form-control-lg"
                       />
                       <label className="form-label" htmlFor="form3Example8">
-                        Address
+                        Password
                       </label>
                     </div>
-                    <div className="d-md-flex justify-content-start align-items-center mb-4 py-2">
-                      <h6 className="mb-0 me-4">Gender: </h6>
-                      <div className="form-check form-check-inline mb-0 me-4">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="femaleGender"
-                          defaultValue="option1"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="femaleGender"
-                        >
-                          Female
-                        </label>
-                      </div>
-                      <div className="form-check form-check-inline mb-0 me-4">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="maleGender"
-                          defaultValue="option2"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="maleGender"
-                        >
-                          Male
-                        </label>
-                      </div>
-                      <div className="form-check form-check-inline mb-0">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="otherGender"
-                          defaultValue="option3"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="otherGender"
-                        >
-                          Other
-                        </label>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-md-6 mb-4">
-                        <select className="select">
-                          <option value={1}>State</option>
-                          <option value={2}>Option 1</option>
-                          <option value={3}>Option 2</option>
-                          <option value={4}>Option 3</option>
-                        </select>
-                      </div>
-                      <div className="col-md-6 mb-4">
-                        <select className="select">
-                          <option value={1}>City</option>
-                          <option value={2}>Option 1</option>
-                          <option value={3}>Option 2</option>
-                          <option value={4}>Option 3</option>
-                        </select>
-                      </div>
-                    </div>
+
                     <div className="form-outline mb-4">
                       <input
                         type="text"
-                        id="form3Example9"
+                        id="form3Example8"
                         className="form-control form-control-lg"
                       />
-                      <label className="form-label" htmlFor="form3Example9">
-                        DOB
+                      <label className="form-label" htmlFor="form3Example8">
+                        Confirm Password
                       </label>
                     </div>
-                    <div className="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example90"
-                        className="form-control form-control-lg"
-                      />
-                      <label className="form-label" htmlFor="form3Example90">
-                        Pincode
-                      </label>
-                    </div>
-                    <div className="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example99"
-                        className="form-control form-control-lg"
-                      />
-                      <label className="form-label" htmlFor="form3Example99">
-                        Course
-                      </label>
-                    </div>
-                    <div className="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example97"
-                        className="form-control form-control-lg"
-                      />
-                      <label className="form-label" htmlFor="form3Example97">
-                        Email ID
-                      </label>
-                    </div>
-                    <div className="d-flex justify-content-end pt-3">
-                      <button type="button" className="btn btn-light btn-lg">
-                        Reset all
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn-warning btn-lg ms-2"
-                      >
-                        Submit form
-                      </button>
-                    </div>
+                  </div>
+
+                  <div
+                    className="d-flex justify-content-end pt-3"
+                    style={{
+                      position: "relative",
+                      right: "40%",
+                    }}
+                  >
+                    <button
+                      type="button"
+                      className="btn btn-dark btn-lg btn-block"
+                    >
+                      Submit form
+                    </button>
                   </div>
                 </div>
               </div>
