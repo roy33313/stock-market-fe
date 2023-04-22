@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../serverQueries/auth/auth";
+import NavBar from "../components/NavBar/NavBar";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -10,5 +11,10 @@ export default function Home() {
       navigate("/login");
     }
   }, []);
-  return <div>Home</div>;
+  return (
+    <div>
+      <NavBar />
+      Home
+    </div>
+  );
 }
