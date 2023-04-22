@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../serverQueries/login/login";
 import { isAuthenticated } from "../../serverQueries/auth/auth";
-import bgImage from "../../assets/images/login/Login Image.jpg"
+import loginImage from "../../assets/images/login/Login Image.jpg"
+import bgImage from "../../assets/images/login/Bg.jpg"
+
 
 export default function LoginWidget() {
   const navigate = useNavigate();
@@ -27,7 +29,7 @@ export default function LoginWidget() {
   };
 
   return (
-    <section className="vh-100" style={{ backgroundColor: "#404040" }}>
+    <section className="vh-100" style={{ backgroundImage:`url(${bgImage})`}}>
       <div className="container  h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col col-xl-10">
@@ -35,7 +37,7 @@ export default function LoginWidget() {
               <div className="row g-0">
                 <div className="col-md-6 col-lg-5 d-none d-md-block">
                   <img
-                    src={bgImage}
+                    src={loginImage}
                     alt="login form"
                     className="img-fluid"
                     style={{ borderRadius: "1rem 0 0 1rem" }}
