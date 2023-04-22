@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { inputValidation } from "../../utils/registerUtils";
-import bgImage from "../../assets/images/login/Login Image.jpg";
+import bgImage from "../../assets/images/Register/Register Image.jpg";
 
 export default function RegisterWidget() {
   const [firstName, setFirstName] = useState("");
@@ -62,9 +62,7 @@ export default function RegisterWidget() {
                 </div>
                 <div className="col-xl-6">
                   <div className="card-body p-md-5 text-black">
-                    <h3 className="mb-5 text-uppercase">
-                      Student registration form
-                    </h3>
+                    <h3 className="mb-5 text-uppercase">Sign Up</h3>
                     <div className="row">
                       <div className="col-md-6 mb-4">
                         <div className="form-outline">
