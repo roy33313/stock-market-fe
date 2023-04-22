@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../serverQueries/login/login";
 import { isAuthenticated } from "../../serverQueries/auth/auth";
 import loginImage from "../../assets/images/login/Login Image.jpg"
-import bgImage from "../../assets/images/login/Bg.jpg"
+import bgImage from "../../assets/images/login/bg.mp4"
+import "./LoginWidget.css"
 
 
 export default function LoginWidget() {
@@ -30,6 +31,11 @@ export default function LoginWidget() {
 
   return (
     <section className="vh-100" style={{ backgroundImage:`url(${bgImage})`}}>
+      <div>
+        <video loop autoPlay muted id="bg-video">
+          <source src={bgImage} type="video/mp4"/>
+        </video>
+      </div>
       <div className="container  h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col col-xl-10">
@@ -43,8 +49,8 @@ export default function LoginWidget() {
                     style={{ borderRadius: "1rem 0 0 1rem" }}
                   />
                 </div>
-                <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                  <div className="card-body p-4 p-lg-5 text-black">
+                <div className="col-md-6 col-lg-7 d-flex align-items-center" style={{backgroundColor:"#010c12"}}>
+                  <div className="card-body p-4 p-lg-5 text-white">
                     <form>
                       <div className="d-flex align-items-center mb-3 pb-1">
                         <i
