@@ -1,0 +1,11 @@
+.lastCont{
+    align-items: center;
+}
+
+.btn{
+    position: relative;
+    top : 10%;
+    left: 48%;
+    background-color: #010C12;
+    
+}

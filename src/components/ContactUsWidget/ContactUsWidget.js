@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ContactUs.css";
 import bgImage from "../../assets/images/common/bg.mp4";
 import { sendEmail } from "../../utils/sendMail";
