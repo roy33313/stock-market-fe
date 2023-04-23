@@ -1,3 +1,24 @@
-function sendMail() {}
+import emailjs from "emailjs-com";
 
-export { sendMail };
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_heylpc3",
+      "template_aokm04g",
+      e.target,
+      "-HWZJafdzU54KocC_"
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+
+  e.target.reset();
+};
+export { sendEmail };
