@@ -6,14 +6,14 @@ export default function NewsContainer() {
 
   useEffect(() => {
     let url = process.env.REACT_APP_NEWS_API;
-    fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((value) => {
-        console.log(value);
-        setData(value.articles);
-      });
+    console.log("useEffect called");
+    const getData = async () => {
+      const response = await fetch(url);
+      const responseData = await response.json();
+      console.log(responseData);
+      setData(responseData.articles);
+    };
+    getData();
   }, []);
 
   return (
