@@ -9,29 +9,35 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg" style={{backgroundColor:"#010c12"}}>
       <div className="container-fluid">
         <div className=" collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav  ">
-            <li className="nav-item">
+          <ul className="navbar-nav  " >
+            <li className="nav-item" >
               <Link
-                className="nav-link mx-2 active"
+                className="nav-link mx-2"
                 aria-current="page"
                 to="/home"
               >
+                <p style={{color:"#FFFFFF"}}>
                 Home
+                </p>
               </Link>
             </li>
             {!flag ? (
               <>
                 <li className="nav-item">
                   <Link className="nav-link mx-2" to="/login">
+                  <p style={{color:"#FFFFFF"}}>
                     Login
+                    </p>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link mx-2" to="/register">
-                    Register
+                  <p style={{color:"#FFFFFF"}}>
+                  Register
+                    </p>
                   </Link>
                 </li>
               </>
@@ -39,29 +45,44 @@ export default function NavBar() {
               <>
                 <li className="nav-item">
                   <Link className="nav-link mx-2" to="/profile">
-                    Profile
+                  <p style={{color:"#FFFFFF"}}>
+                  Profile
+                    </p>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link mx-2" to="/home">
-                    Predictions
+                  <p style={{color:"#FFFFFF"}}>
+                  Predictions
+                    </p>
+                    
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link mx-2" to="/news">
-                    News
+                  <p style={{color:"#FFFFFF"}}>
+                  News
+                    </p>
+                    
                   </Link>
                 </li>
               </>
             )}
             <li className="nav-item">
               <Link className="nav-link mx-2" to="/aboutus">
-                About us
+              <p style={{color:"#FFFFFF"}}>
+              About us
+                    </p>
+                    
+                
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link mx-2" to="/contactus">
-                Contact us
+              <p style={{color:"#FFFFFF"}}>
+              Contact us
+                    </p>
+                
               </Link>
             </li>
           </ul>
