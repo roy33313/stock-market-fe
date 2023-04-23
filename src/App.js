@@ -7,6 +7,7 @@ import ContactUs from "./pages/ContactUs";
 import Profile from "./pages/Profile";
 
 import News from "./pages/News";
+import Prediction from "./pages/Prediction";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/aboutus" element={<AboutUs />} />
         <Route exact path="/contactus" element={<ContactUs />} />
         <Route exact path="/news" element={<News />} />
+        <Route exact path="/prediction" element={<Prediction/>} />
       </Routes>
     </div>
   );

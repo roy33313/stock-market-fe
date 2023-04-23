@@ -42,7 +42,7 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link mx-2" to="/home">
+                  <Link className="nav-link mx-2" to="/prediction">
                     <p style={{ color: "#FFFFFF" }}>Predictions</p>
                   </Link>
                 </li>
