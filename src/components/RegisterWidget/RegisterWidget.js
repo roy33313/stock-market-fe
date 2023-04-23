@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { inputValidation } from "../../utils/registerUtils";
-import bgImage from "../../assets/images/Register/Register Image.jpg";
+import registerImage from "../../assets/images/Register/Register Image.jpg";
+import bgImage from "../../assets/images/login/bg.mp4"
+import "./RegisterWidget.css"
 import { register } from "../../serverQueries/register/register";
 import { useNavigate } from "react-router-dom";
 
@@ -68,7 +70,12 @@ export default function RegisterWidget() {
   };
 
   return (
-    <section className="h-100 " style={{ backgroundColor: "#404040" }}>
+    <section className="h-100 " style={{ backgroundImage:`url(${bgImage})`}}>
+      <div>
+        <video loop autoPlay muted id="bg-video">
+          <source src={bgImage} type="video/mp4"/>
+        </video>
+      </div>
       <div className="container  h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col">
@@ -76,17 +83,17 @@ export default function RegisterWidget() {
               className="card card-registration my-4 "
               style={{ borderRadius: "1rem" }}
             >
-              <div className="row g-0">
-                <div className="col-xs-6 col-sm-5 d-none d-sm-block">
+              <div className="row g-0" style={{backgroundColor:"#010c12"}}>
+                <div className="col-xs-6 col-sm-5 d-none d-sm-block" style={{backgroundColor:"#010c12"}}>
                   <img
-                    src={bgImage}
+                    src={registerImage}
                     className="img-fluid"
                     alt="register"
                     style={{ borderRadius: "1rem 0 0 1rem" }}
                   />
                 </div>
-                <div className="col-xl-6">
-                  <div className="card-body p-md-5 text-black">
+                <div className="col-xl-6" style={{backgroundColor:"#010c12"}}>
+                  <div className="card-body p-md-5 text-white">
                     <h3 className="mb-5 text-uppercase">Sign Up</h3>
                     <div className="row">
                       <div className="col-md-6 mb-4">
@@ -193,7 +200,7 @@ export default function RegisterWidget() {
                       className="btn btn-dark btn-lg btn-block"
                       onClick={handleRegistration}
                     >
-                      Submit form
+                      Submit
                     </button>
                   </div>
                 </div>
