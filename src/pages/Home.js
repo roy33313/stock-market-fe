@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../serverQueries/auth/auth";
 import NavBar from "../components/NavBar/NavBar";
+import RealTimeWidget from "../components/TradingViewWidgets/RealTimeWidget/RealTimeWidget";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <div>
       <NavBar />
-      Home
+      <RealTimeWidget />
     </div>
   );
 }
