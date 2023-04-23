@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NewsCard from "../NewsCard/NewsCard";
+import bgImage from "../../assets/images/common/bg.mp4"
+import "./NewsContainer.css"
 
 export default function NewsContainer() {
   let [data, setData] = useState({});
@@ -17,7 +19,12 @@ export default function NewsContainer() {
   }, []);
 
   return (
-    <div style={{ background: "#4B0150" }}>
+    <div>
+      <div>
+        <video loop autoPlay muted id="bg-video">
+          <source src={bgImage} type="video/mp4"/>
+        </video>
+      </div>
       <h1 style={{ color: "#FFFFFF" }}>NewsMonkey-Top HeadLines</h1>
       <div className="row">
         {Array.from(data).map((item) => {

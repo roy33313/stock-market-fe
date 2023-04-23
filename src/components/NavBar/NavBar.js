@@ -9,7 +9,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <div className=" collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav  ">
