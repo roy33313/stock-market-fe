@@ -73,8 +73,18 @@
 }     */
 
 .secondlayer{
-    background-color: yellow;
-    padding-bottom: 10%;
+    background : url("../../assets/images/contactUs/bg wood.jpg");
+    /* padding-bottom: 10%; */
     /* padding:20%; */
     /* margin-bottom: -50%; */
+}
+
+
+
+/* .contact-image{
+    background-color: blue;
+} */
+
+.contact-form{
+   background-color: #010c12;
 }
