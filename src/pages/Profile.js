@@ -6,16 +6,18 @@ import { isAuthenticated } from "../serverQueries/auth/auth";
 
 export default function Profile() {
   const navigate = useNavigate();
+
   useEffect(() => {
     if (!isAuthenticated()) {
       navigate("/login");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const details = isAuthenticated();
   return (
     <div>
       <NavBar />
-      <ProfileWidget />
+      <ProfileWidget details={details} />
     </div>
   );
 }
