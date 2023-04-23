@@ -6,6 +6,8 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Profile from "./pages/Profile";
 
+import News from "./pages/News";
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,7 @@ function App() {
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/aboutus" element={<AboutUs />} />
         <Route exact path="/contactus" element={<ContactUs />} />
+        <Route exact path="/news" element={<News />} />
       </Routes>
     </div>
   );

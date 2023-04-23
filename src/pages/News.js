@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import NavBar from "../components/NavBar/NavBar";
-import ProfileWidget from "../components/ProfileWidget/ProfileWidget";
+import NewsContainer from "../components/NewsContainer/NewsContainer";
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../serverQueries/auth/auth";
 
-export default function Profile() {
+export default function News() {
   const navigate = useNavigate();
   useEffect(() => {
     if (!isAuthenticated()) {
@@ -14,7 +14,7 @@ export default function Profile() {
   return (
     <div>
       <NavBar />
-      <ProfileWidget />
+      <NewsContainer />
     </div>
   );
 }

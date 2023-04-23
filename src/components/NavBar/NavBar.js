@@ -47,6 +47,11 @@ export default function NavBar() {
                     Predictions
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link mx-2" to="/news">
+                    News
+                  </Link>
+                </li>
               </>
             )}
             <li className="nav-item">
