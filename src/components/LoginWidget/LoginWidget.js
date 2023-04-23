@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../serverQueries/login/login";
 import { isAuthenticated } from "../../serverQueries/auth/auth";
 import loginImage from "../../assets/images/login/Login Image.jpg"
-import bgImage from "../../assets/images/login/bg.mp4"
+import bgImage from "../../assets/images/common/bg.mp4"
 import "./LoginWidget.css"
 
 

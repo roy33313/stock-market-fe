@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { inputValidation } from "../../utils/registerUtils";
 import registerImage from "../../assets/images/Register/Register Image.jpg";
-import bgImage from "../../assets/images/login/bg.mp4"
+import bgImage from "../../assets/images/common/bg.mp4"
 import "./RegisterWidget.css"
 import { register } from "../../serverQueries/register/register";
 import { useNavigate } from "react-router-dom";

@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactUs.css";
-import bgImage from "../../assets/images/contactUs/bg.mp4";
+import bgImage from "../../assets/images/common/bg.mp4";
 
 export default function ContactUsWidget() {
   return (
