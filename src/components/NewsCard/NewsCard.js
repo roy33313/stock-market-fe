@@ -3,7 +3,7 @@ import React from "react";
 export default function NewsCard(props) {
   return (
     <>
-      <div className="card mx-5 my-4">
+      <div className="card mx-5 my-4" style={{backgroundColor:"#010c12"}}>
         <img
           src={
             props.obj.urlToImage

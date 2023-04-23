@@ -25,7 +25,6 @@ export default function NewsContainer() {
           <source src={bgImage} type="video/mp4"/>
         </video>
       </div>
-      <h1 style={{ color: "#FFFFFF" }}>NewsMonkey-Top HeadLines</h1>
       <div className="row">
         {Array.from(data).map((item) => {
           return (
