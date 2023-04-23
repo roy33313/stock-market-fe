@@ -27,14 +27,14 @@
     margin-bottom: 8%;
     margin-top: -10%;
     text-align: center;
-    color: #0062cc;
+    color: white;
 }
 .contact-form .btnContact {
     width: 50%;
     border: none;
     border-radius: 1rem;
     padding: 1.5%;
-    background: #dc3545;
+    background: #02202B ;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
@@ -73,7 +73,8 @@
 }     */
 
 .secondlayer{
-    background : url("../../assets/images/contactUs/bg wood.jpg");
+    background-color: #010c12 ;
+    /* background : url("../../assets/images/contactUs/bg wood.jpg"); */
     /* padding-bottom: 10%; */
     /* padding:20%; */
     /* margin-bottom: -50%; */
@@ -86,5 +87,5 @@
 } */
 
 .contact-form{
-   background-color: #010c12;
+   background-color:  #02202B ;
 }
