@@ -9,7 +9,7 @@ export default function AboutUsWidget() {
           <source src={bgImage} type="video/mp4" />
         </video>
       </div>
-      <section className="about-us">
+      <div className="about-us">
         <div className="about">
           <img
             src="https://news.maxabout.com/wp-content/uploads/2017/02/kawasaki-ninja-h2r-5.jpg"
@@ -36,7 +36,7 @@ export default function AboutUsWidget() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
