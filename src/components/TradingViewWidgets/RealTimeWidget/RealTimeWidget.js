@@ -36,7 +36,7 @@ export default function RealTimeWidget() {
       ) {
         new window.TradingView.widget({
           autosize: true,
-          symbol: "NASDAQ:AAPL",
+          symbol: "EURUSD",
           interval: "1",
           timezone: "Etc/UTC",
           theme: "dark",
