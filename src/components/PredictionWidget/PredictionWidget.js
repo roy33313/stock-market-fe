@@ -158,65 +158,67 @@ export default function PredictionWidget() {
                 <div className="d-flex align-items-center mb-3 pb-1">
                   {/* <i lassName="fas fa-cubes fa-2x me-3"
         style= "color: #ff6219;"> */}
-              <img
-                src={logo}
-                alt="login form"
-                className="img-fluid"
-                style={{
-                  display: "inlineBlock",
-                  height: "200px",
-                  marginTop: "-15px",
-                }}
-              />
-            </div>
-            <h1
-              className="signIn fw-normal mb-3 pb-3"
-              style={{ letterSpacing: 1 }}
-            >
-              <strong>LETS START PREDICTING</strong>
-            </h1>
-            <div className="form-outline mb-4">
-              <label className="labels" htmlFor="location">
-                Select Stock
-              </label>
-              <select
-                id="location"
-                className="options"
-                name="comment"
-                onClick={handleStock}
-              >
-                {stocks.map((data) => {
-                  return <option key={data}>{data}</option>;
-                })}
-              </select>
-            </div>
-            <div className="form-outline mb-4">
-              <label className="labels" htmlFor="soil">
-                Moving Average
-              </label>
-              <select
-                id="soil"
-                className="options"
-                name="comment1"
-                onChange={handleMovingAverage}
-              >
-                <option>10 days</option>
-                <option>50 days</option>
-                <option>100 days</option>
-              </select>
-            </div>
-            <div className="pt-1 mb-4">
-              <button
-                className="btn btn-dark btn-lg"
-                type="button"
-                onClick={handlePredict}
-              >
-                Predict
-              </button>
+                  <img
+                    src={logo}
+                    alt="login form"
+                    className="img-fluid"
+                    style={{
+                      display: "inlineBlock",
+                      height: "200px",
+                      marginTop: "-15px",
+                    }}
+                  />
+                </div>
+                <h1
+                  className="signIn fw-normal mb-3 pb-3"
+                  style={{ letterSpacing: 1 }}
+                >
+                  <strong>LETS START PREDICTING</strong>
+                </h1>
+                <div className="form-outline mb-4">
+                  <label className="labels" htmlFor="location">
+                    Select Stock
+                  </label>
+                  <select
+                    id="location"
+                    className="options"
+                    name="comment"
+                    onClick={handleStock}
+                  >
+                    {stocks.map((data) => {
+                      return <option key={data}>{data}</option>;
+                    })}
+                  </select>
+                </div>
+                <div className="form-outline mb-4">
+                  <label className="labels" htmlFor="soil">
+                    Moving Average
+                  </label>
+                  <select
+                    id="soil"
+                    className="options"
+                    name="comment1"
+                    onChange={handleMovingAverage}
+                  >
+                    <option>10 days</option>
+                    <option>50 days</option>
+                    <option>100 days</option>
+                  </select>
+                </div>
+                <div className="pt-1 mb-4">
+                  <button
+                    className="btn btn-dark btn-lg"
+                    type="button"
+                    onClick={handlePredict}
+                  >
+                    Predict
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 }
