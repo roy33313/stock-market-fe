@@ -140,7 +140,7 @@ export default function PredictionWidget() {
       <div className="content_cont">
         <div className="second_cont">
           <div className="content">
-            <div classname="d-flex align-items-center mb-3 pb-1">
+            <div className="d-flex align-items-center mb-3 pb-1">
               {/* <i lassName="fas fa-cubes fa-2x me-3"
         style= "color: #ff6219;"> */}
               <img
@@ -155,8 +155,8 @@ export default function PredictionWidget() {
             >
               <strong>LETS START PREDICTING</strong>
             </h1>
-            <div classname="form-outline mb-4">
-              <label className="labels" htmlfor="location">
+            <div className="form-outline mb-4">
+              <label className="labels" htmlFor="location">
                 Select Stock
               </label>
               <select
@@ -166,12 +166,12 @@ export default function PredictionWidget() {
                 onClick={handleStock}
               >
                 {stocks.map((data) => {
-                  return <option>{data}</option>;
+                  return <option key={data}>{data}</option>;
                 })}
               </select>
             </div>
-            <div classname="form-outline mb-4">
-              <label className="labels" htmlfor="soil">
+            <div className="form-outline mb-4">
+              <label className="labels" htmlFor="soil">
                 Moving Average
               </label>
               <select
@@ -185,7 +185,7 @@ export default function PredictionWidget() {
                 <option>100 days</option>
               </select>
             </div>
-            <div classname="pt-1 mb-4">
+            <div className="pt-1 mb-4">
               <button
                 className="btn btn-dark btn-lg"
                 type="button"
