@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import bgImage from "../../assets/images/common/bg.mp4";
 import "./predictionWidget.css";
 import predictedValue from "../../serverQueries/prediction/predictedValue";
+import logo from "../../assets/images/common/Logo.png";
 
 export default function PredictionWidget() {
   const stocks = [
@@ -144,9 +145,14 @@ export default function PredictionWidget() {
               {/* <i lassName="fas fa-cubes fa-2x me-3"
         style= "color: #ff6219;"> */}
               <img
-                className="logo"
-                src="https://cdn-icons-png.flaticon.com/512/87/87390.png"
-                alt="prrrr"
+                src={logo}
+                alt="login form"
+                className="img-fluid"
+                style={{
+                  display: "inlineBlock",
+                  height: "200px",
+                  marginTop: "-15px",
+                }}
               />
             </div>
             <h1
