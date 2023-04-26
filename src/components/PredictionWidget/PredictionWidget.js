@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import bgImage from "../../assets/images/common/bg.mp4";
 import "./predictionWidget.css";
+import predictedValue from "../../serverQueries/prediction/predictedValue";
+
 export default function PredictionWidget() {
+  const [stock, setStock] = useState("ALKEM.NS");
+  const [movingAverage, setMovingAverage] = useState("10 days");
+
+  const handleStock = (event) => {
+    setStock(event.target.value);
+  };
+
+  const handleMovingAverage = (event) => {
+    setMovingAverage(event.target.value);
+  };
+
+  const handlePredict = () => {
+    predictedValue(stock, movingAverage);
+  };
   return (
     <div className="main_cont">
       <div>
@@ -31,9 +47,14 @@ export default function PredictionWidget() {
               <label className="labels" htmlfor="location">
                 Select Stock
               </label>
-              <select id="location" className="options" name="comment">
-                <option>ALKEM.NS</option>
-                <option>AKZOINDIA.NS</option>
+              <select
+                id="location"
+                className="options"
+                name="comment"
+                onChange={handleStock}
+              >
+                <option value="ALKEM.NS">ALKEM.NS</option>
+                <option value="AKZOINDIA.NS">AKZOINDIA.NS</option>
                 <option>ALCHCORP.BO</option>
                 <option>AMARAJABAT.NS</option>
                 <option>AMBIKCO.NS</option>
@@ -43,14 +64,23 @@ export default function PredictionWidget() {
               <label className="labels" htmlfor="soil">
                 Moving Average
               </label>
-              <select id="soil" className="options" name="comment1">
+              <select
+                id="soil"
+                className="options"
+                name="comment1"
+                onChange={handleMovingAverage}
+              >
                 <option>10 days</option>
                 <option>50 days</option>
                 <option>100 days</option>
               </select>
             </div>
             <div classname="pt-1 mb-4">
-              <button className="btn btn-dark btn-lg" type="button">
+              <button
+                className="btn btn-dark btn-lg"
+                type="button"
+                onClick={handlePredict}
+              >
                 Predict
               </button>
             </div>
