@@ -20,8 +20,8 @@ const predictedValue = async (stock, movingAverage) => {
   console.log(responseData2);
 
   const fileURL = URL.createObjectURL(responseData2);
-  await window.open(fileURL.slice(5));
-  console.log(fileURL.slice(5));
+  console.log(fileURL);
+  window.open(fileURL);
   console.log("punk");
 };
 
