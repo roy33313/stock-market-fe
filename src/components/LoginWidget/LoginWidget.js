@@ -5,6 +5,7 @@ import { login } from "../../serverQueries/login/login";
 import { isAuthenticated } from "../../serverQueries/auth/auth";
 import loginImage from "../../assets/images/login/Login Image.jpg";
 import bgImage from "../../assets/images/common/bg.mp4";
+import logo from "../../assets/images/common/Logo.png";
 import "./LoginWidget.css";
 
 export default function LoginWidget() {
@@ -45,7 +46,6 @@ export default function LoginWidget() {
                     src={loginImage}
                     alt="login form"
                     className="img-fluid"
-                    // style={{ borderRadius: "1rem 0 0 1rem" }}
                   />
                 </div>
                 <div
@@ -59,7 +59,17 @@ export default function LoginWidget() {
                           className="fas fa-cubes fa-2x me-3"
                           style={{ color: "#ff6219" }}
                         />
-                        <span className="h1 fw-bold mb-0">Logo</span>
+                        {/* <span className="h1 fw-bold mb-0">Logo</span> */}
+                        <img
+                          src={logo}
+                          alt="login form"
+                          className="img-fluid"
+                          style={{
+                            display: "inlineBlock",
+                            height: "200px",
+                            marginTop: "-15px",
+                          }}
+                        />
                       </div>
                       <h5
                         className="fw-normal mb-3 pb-3"
