@@ -7,10 +7,17 @@ const predictedValue = async (stock, movingAverage) => {
     },
     body: JSON.stringify({ stock, movingAverage }),
   };
-  const response = await fetch("http://127.0.0.1:5000/predict", options);
-  const responseData = await response.json();
+  const response1 = await fetch("http://127.0.0.1:5000/predict", options);
+  const responseData1 = await response1.json();
+  console.log(responseData1);
 
-  console.log(responseData);
+  const response2 = await fetch(
+    "http://127.0.0.1:5000/predict/getImage?graph=chart"
+  );
+  const responseData2 = await response2.blob();
+  const fileURL = URL.createObjectURL(responseData2);
+  console.log(fileURL.blob);
+  window.open(fileURL);
 };
 
 export default predictedValue;
