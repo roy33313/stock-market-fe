@@ -1,4 +1,6 @@
 const predictedValue = async (stock, movingAverage) => {
+  console.log({ stock, movingAverage });
+
   const options = {
     method: "POST",
     headers: {
@@ -15,9 +17,12 @@ const predictedValue = async (stock, movingAverage) => {
     "http://127.0.0.1:5000/predict/getImage?graph=chart"
   );
   const responseData2 = await response2.blob();
+  console.log(responseData2);
+
   const fileURL = URL.createObjectURL(responseData2);
-  console.log(fileURL.blob);
-  window.open(fileURL);
+  await window.open(fileURL.slice(5));
+  console.log(fileURL.slice(5));
+  console.log("punk");
 };
 
 export default predictedValue;

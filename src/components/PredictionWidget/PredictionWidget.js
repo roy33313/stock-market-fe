@@ -117,7 +117,7 @@ export default function PredictionWidget() {
     "ANDREWYU.BO",
     "ANERI.BO",
   ];
-  const [stock, setStock] = useState("ALKEM.NS");
+  const [stock, setStock] = useState("20MICRONS.BO");
   const [movingAverage, setMovingAverage] = useState("10 days");
   const [loading, setLoading] = useState(false);
 
@@ -131,7 +131,8 @@ export default function PredictionWidget() {
 
   const handlePredict = async () => {
     setLoading(true);
-    predictedValue(stock, movingAverage);
+    await predictedValue(stock, movingAverage);
+    setLoading(false);
   };
 
   return (
