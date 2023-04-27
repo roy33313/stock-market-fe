@@ -5,6 +5,7 @@ import prediction from "../../serverQueries/prediction/predictedValue";
 import logo from "../../assets/images/common/Logo.png";
 
 import ClipLoader from "react-spinners/ClipLoader";
+import { stockNames } from "./stockNames";
 export default function PredictionWidget() {
   const override = {
     display: "block",
@@ -13,121 +14,8 @@ export default function PredictionWidget() {
     marginTop: "20%",
   };
 
-  const stocks = [
-    "20MICRONS.BO",
-    "3IINFOTECH.BO",
-    "3IINFOTECH.NS",
-    "3MINDIA.BO",
-    "3MINDIA.NS",
-    "3PLAND.NS",
-    "5PAISA.NS",
-    "AGROPHOS.NS",
-    "AHLEAST.BO",
-    "AHLEAST.NS",
-    "AHLUCONT.BO",
-    "AHLUCONT.NS",
-    "AHLWEST.BO",
-    "AHLWEST.NS",
-    "AHMDSTE.BO",
-    "AIAENG.BO",
-    "AIFL.BO",
-    "AIFL.NS",
-    "AIIL.BO",
-    "AIMCOPEST.BO",
-    "AINFRA.BO",
-    "AIONJSW.NS",
-    "AIRAN.NS",
-    "AISHWARYA.BO",
-    "AJANTPHARM.BO",
-    "AJANTPHARM.NS",
-    "AJANTSOY.BO",
-    "AJCON.BO",
-    "AJEL.BO",
-    "AJIL.BO",
-    "AJMERA.BO",
-    "AJMERA.NS",
-    "AJWAFUN.BO",
-    "AKASH.NS",
-    "AKASHDEEP.BO",
-    "AKCAPIT.BO",
-    "AKM.BO",
-    "AKSCHEM.BO",
-    "AKSHOPTFBR.BO",
-    "AKSHOPTFBR.NS",
-    "AKSPINTEX.BO",
-    "AKZOINDIA.NS",
-    "ALANKIT.BO",
-    "ALANKIT.NS",
-    "ALANSCOTT.BO",
-    "ALBERTDA.BO",
-    "ALBERTDAVD.NS",
-    "ALBK.BO",
-    "ALBK.NS",
-    "ALCHCORP.BO",
-    "ALCHEM.NS",
-    "ALEMBICLTD.BO",
-    "ALEMBICLTD.NS",
-    "ALEXANDER.BO",
-    "ALFAICA.BO",
-    "ALFATRAN.BO",
-    "ALFAVIO.BO",
-    "ALFL.BO",
-    "ALICON.BO",
-    "ALICON.NS",
-    "ALKA.BO",
-    "ALKALI.BO",
-    "ALKALI.NS",
-    "ALKASEC.BO",
-    "ALKEM.BO",
-    "ALKEM.NS",
-    "ALKYLAMINE.BO",
-    "ALKYLAMINE.NS",
-    "ALLCARGO.NS",
-    "ALLSEC.BO",
-    "ALLSEC.NS",
-    "ALMONDZ.BO",
-    "ALMONDZ.NS",
-    "ALOKINDS.NS",
-    "ALOKTEXT.BO",
-    "ALPA.BO",
-    "ALPA.NS",
-    "ALPHAGEO.BO",
-    "ALPHAGEO.NS",
-    "ALPINEHOU.BO",
-    "ALPSINDUS.NS",
-    "ALPSMOTOR.BO",
-    "ALSL.BO",
-    "ALUFLUOR.BO",
-    "AMAL.BO",
-    "AMALGAM.BO",
-    "AMANITRA.BO",
-    "AMARAJABAT.BO",
-    "AMARAJABAT.NS",
-    "AMARDEE.BO",
-    "AMARJOTHI.BO",
-    "AMARSEC.BO",
-    "AMAZEENT.BO",
-    "AMBALALSA.BO",
-    "AMBIKCO.BO",
-    "AMBIKCO.NS",
-    "AMBITION.BO",
-    "ANANTRAJ.NS",
-    "ANARINDUS.BO",
-    "ANDHRABANK.BO",
-    "ANDHRABANK.NS",
-    "ANDHRACEMT.BO",
-    "ANDHRACEMT.NS",
-    "ANDHRAPAP.NS",
-    "ANDHRAPET.BO",
-    "ANDHRSUGAR.BO",
-    "ANDHRSUGAR.NS",
-    "ANDREWYU.BO",
-    "ANERI.BO",
-  ];
   const [stock, setStock] = useState("20MICRONS.BO");
-  const [movingAverage, setMovingAverage] = useState("10 days");
   const [predictedValue, setPredictedVaue] = useState(0);
-  const [volumeImg, setVolumeImg] = useState("");
   const [chartImg, setChartImg] = useState("");
   const [loading, setLoading] = useState(false);
   const [visibility, setVisibility] = useState("hidden");
@@ -136,22 +24,9 @@ export default function PredictionWidget() {
     setStock(event.target.value);
   };
 
-  const handleMovingAverage = (event) => {
-    setMovingAverage(event.target.value);
-  };
-
   const handlePredict = async () => {
     setLoading(true);
-    await prediction(
-      stock,
-      movingAverage,
-      volumeImg,
-      setVolumeImg,
-      chartImg,
-      setChartImg,
-      predictedValue,
-      setPredictedVaue
-    );
+    await prediction(stock, setChartImg, setPredictedVaue);
     setLoading(false);
     setVisibility("visible");
   };
@@ -205,24 +80,9 @@ export default function PredictionWidget() {
                     name="comment"
                     onClick={handleStock}
                   >
-                    {stocks.map((data) => {
+                    {stockNames.map((data) => {
                       return <option key={data}>{data}</option>;
                     })}
-                  </select>
-                </div>
-                <div className="form-outline mb-4">
-                  <label className="labels" htmlFor="soil">
-                    Moving Average
-                  </label>
-                  <select
-                    id="soil"
-                    className="options"
-                    name="comment1"
-                    onChange={handleMovingAverage}
-                  >
-                    <option>10 days</option>
-                    <option>50 days</option>
-                    <option>100 days</option>
                   </select>
                 </div>
                 <div className="form-outline mb-4">
@@ -252,29 +112,14 @@ export default function PredictionWidget() {
                 </div>
                 <div style={{ height: "20%", width: "10%" }}>
                   <img
-                    // style={{ height: "20%", width: "10%" }}
-                    src={volumeImg}
-                    alt="chart"
-                    style={{
-                      visibility: visibility,
-                      height: "600%",
-                      width: "1600%",
-                      position: "relative",
-                      right: "1900%",
-                      bottom: "1300%",
-                      border: "2px solid blue",
-                      borderRadius: "10%",
-                    }}
-                  />
-                  <img
                     src={chartImg}
                     alt="chart"
                     style={{
                       visibility: visibility,
-                      height: "600%",
-                      width: "1600%",
+                      height: "1200%",
+                      width: "1900%",
                       position: "relative",
-                      right: "1900%",
+                      right: "2000%",
                       bottom: "1250%",
                       border: "2px solid blue",
                       borderRadius: "10%",

@@ -1,14 +1,5 @@
-const prediction = async (
-  stock,
-  movingAverage,
-  chartImg,
-  setChartImg,
-  volumeImg,
-  setVolumeImg,
-  predictedValue,
-  setPredictedVaue
-) => {
-  console.log({ stock, movingAverage });
+const prediction = async (stock, setChartImg, setPredictedVaue) => {
+  console.log({ stock });
 
   const options = {
     method: "POST",
@@ -16,7 +7,7 @@ const prediction = async (
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ stock, movingAverage }),
+    body: JSON.stringify({ stock }),
   };
   const response1 = await fetch("http://127.0.0.1:5000/predict", options);
   const responseData1 = await response1.json();
@@ -29,13 +20,6 @@ const prediction = async (
   const responseData2 = await response2.blob();
   const chartURL = URL.createObjectURL(responseData2);
   setChartImg(chartURL);
-
-  const response3 = await fetch(
-    "http://localhost:5000/predict/getImage?graph=volume"
-  );
-  const responseData3 = await response3.blob();
-  const volumeURL = URL.createObjectURL(responseData3);
-  setVolumeImg(volumeURL);
 };
 
 export default prediction;
