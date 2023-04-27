@@ -1,4 +1,13 @@
-const predictedValue = async (stock, movingAverage, img, setImg) => {
+const prediction = async (
+  stock,
+  movingAverage,
+  chartImg,
+  setChartImg,
+  volumeImg,
+  setVolumeImg,
+  predictedValue,
+  setPredictedVaue
+) => {
   console.log({ stock, movingAverage });
 
   const options = {
@@ -12,19 +21,21 @@ const predictedValue = async (stock, movingAverage, img, setImg) => {
   const response1 = await fetch("http://127.0.0.1:5000/predict", options);
   const responseData1 = await response1.json();
   console.log(responseData1);
+  setPredictedVaue(responseData1.predicted_main_out);
 
   const response2 = await fetch(
     "http://localhost:5000/predict/getImage?graph=chart"
   );
   const responseData2 = await response2.blob();
-  console.log(responseData2);
+  const chartURL = URL.createObjectURL(responseData2);
+  setChartImg(chartURL);
 
-  const fileURL = URL.createObjectURL(responseData2);
-  console.log(fileURL);
-  setImg(fileURL);
-
-  window.open("https:google.com");
-  // window.location.href = fileURL.slice(5);
+  const response3 = await fetch(
+    "http://localhost:5000/predict/getImage?graph=volume"
+  );
+  const responseData3 = await response3.blob();
+  const volumeURL = URL.createObjectURL(responseData3);
+  setVolumeImg(volumeURL);
 };
 
-export default predictedValue;
+export default prediction;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import bgImage from "../../assets/images/common/bg.mp4";
 import "./predictionWidget.css";
-import predictedValue from "../../serverQueries/prediction/predictedValue";
+import prediction from "../../serverQueries/prediction/predictedValue";
 import logo from "../../assets/images/common/Logo.png";
 
 import ClipLoader from "react-spinners/ClipLoader";
@@ -118,8 +118,10 @@ export default function PredictionWidget() {
     "ANERI.BO",
   ];
   const [stock, setStock] = useState("20MICRONS.BO");
-  const [img, setImg] = useState("");
   const [movingAverage, setMovingAverage] = useState("10 days");
+  const [predictedValue, setPredictedVaue] = useState(0);
+  const [volumeImg, setVolumeImg] = useState("");
+  const [chartImg, setChartImg] = useState("");
   const [loading, setLoading] = useState(false);
   const [visibility, setVisibility] = useState("hidden");
 
@@ -133,7 +135,16 @@ export default function PredictionWidget() {
 
   const handlePredict = async () => {
     setLoading(true);
-    await predictedValue(stock, movingAverage, img, setImg);
+    await prediction(
+      stock,
+      movingAverage,
+      volumeImg,
+      setVolumeImg,
+      chartImg,
+      setChartImg,
+      predictedValue,
+      setPredictedVaue
+    );
     setLoading(false);
     setVisibility("visible");
   };
@@ -207,6 +218,12 @@ export default function PredictionWidget() {
                     <option>100 days</option>
                   </select>
                 </div>
+                <div className="form-outline mb-4">
+                  <label className="labels" htmlFor="soil">
+                    Predicted Value
+                  </label>
+                  <p style={{ color: "#fff" }}>{predictedValue}</p>
+                </div>
                 <div className="pt-1 mb-4">
                   <button
                     className="btn btn-dark btn-lg"
@@ -216,7 +233,16 @@ export default function PredictionWidget() {
                     Predict
                   </button>
                 </div>
-                <img src={img} alt="chart" style={{ visibility: visibility }} />
+                <img
+                  src={volumeImg}
+                  alt="chart"
+                  style={{ visibility: visibility }}
+                />
+                <img
+                  src={chartImg}
+                  alt="chart"
+                  style={{ visibility: visibility }}
+                />
               </div>
             </div>
           </div>
