@@ -1,4 +1,4 @@
-const predictedValue = async (stock, movingAverage) => {
+const predictedValue = async (stock, movingAverage, img, setImg) => {
   console.log({ stock, movingAverage });
 
   const options = {
@@ -14,15 +14,17 @@ const predictedValue = async (stock, movingAverage) => {
   console.log(responseData1);
 
   const response2 = await fetch(
-    "http://127.0.0.1:5000/predict/getImage?graph=chart"
+    "http://localhost:5000/predict/getImage?graph=chart"
   );
   const responseData2 = await response2.blob();
   console.log(responseData2);
 
   const fileURL = URL.createObjectURL(responseData2);
   console.log(fileURL);
-  window.open(fileURL);
-  console.log("punk");
+  setImg(fileURL);
+
+  window.open("https:google.com");
+  // window.location.href = fileURL.slice(5);
 };
 
 export default predictedValue;
