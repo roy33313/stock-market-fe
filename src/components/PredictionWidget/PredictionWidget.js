@@ -6,6 +6,13 @@ import logo from "../../assets/images/common/Logo.png";
 
 import ClipLoader from "react-spinners/ClipLoader";
 export default function PredictionWidget() {
+  const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "red",
+    marginTop: "20%",
+  };
+
   const stocks = [
     "20MICRONS.BO",
     "3IINFOTECH.BO",
@@ -155,7 +162,7 @@ export default function PredictionWidget() {
         <ClipLoader
           color={"#456191"}
           loading={loading}
-          // cssOverride={override}
+          cssOverride={override}
           size={150}
           aria-label="Loading Spinner"
           data-testid="loader"
@@ -222,7 +229,17 @@ export default function PredictionWidget() {
                   <label className="labels" htmlFor="soil">
                     Predicted Value
                   </label>
-                  <p style={{ color: "#fff" }}>{predictedValue}</p>
+                  <p
+                    style={{
+                      color: "#fff",
+                      position: "relative",
+                      left: "60%",
+                      marginTop: "-15%",
+                      marginBottom: "15%",
+                    }}
+                  >
+                    {predictedValue}
+                  </p>
                 </div>
                 <div className="pt-1 mb-4">
                   <button
@@ -233,16 +250,37 @@ export default function PredictionWidget() {
                     Predict
                   </button>
                 </div>
-                <img
-                  src={volumeImg}
-                  alt="chart"
-                  style={{ visibility: visibility }}
-                />
-                <img
-                  src={chartImg}
-                  alt="chart"
-                  style={{ visibility: visibility }}
-                />
+                <div style={{ height: "20%", width: "10%" }}>
+                  <img
+                    // style={{ height: "20%", width: "10%" }}
+                    src={volumeImg}
+                    alt="chart"
+                    style={{
+                      visibility: visibility,
+                      height: "600%",
+                      width: "1600%",
+                      position: "relative",
+                      right: "1900%",
+                      bottom: "1300%",
+                      border: "2px solid blue",
+                      borderRadius: "10%",
+                    }}
+                  />
+                  <img
+                    src={chartImg}
+                    alt="chart"
+                    style={{
+                      visibility: visibility,
+                      height: "600%",
+                      width: "1600%",
+                      position: "relative",
+                      right: "1900%",
+                      bottom: "1250%",
+                      border: "2px solid blue",
+                      borderRadius: "10%",
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
