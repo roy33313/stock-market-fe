@@ -5,7 +5,6 @@ import predictedValue from "../../serverQueries/prediction/predictedValue";
 import logo from "../../assets/images/common/Logo.png";
 
 import ClipLoader from "react-spinners/ClipLoader";
-import ResultPopup from "../Results/ResultPopup";
 export default function PredictionWidget() {
   const stocks = [
     "20MICRONS.BO",
@@ -122,11 +121,7 @@ export default function PredictionWidget() {
   const [img, setImg] = useState("");
   const [movingAverage, setMovingAverage] = useState("10 days");
   const [loading, setLoading] = useState(false);
-  const [visibility, setVisibility] = useState(false);
-
-  const popupCloseHandler = (e) => {
-    setVisibility(e);
-  };
+  const [visibility, setVisibility] = useState("hidden");
 
   const handleStock = (event) => {
     setStock(event.target.value);
@@ -140,7 +135,7 @@ export default function PredictionWidget() {
     setLoading(true);
     await predictedValue(stock, movingAverage, img, setImg);
     setLoading(false);
-    setVisibility(true);
+    setVisibility("visible");
   };
 
   return (
@@ -165,12 +160,6 @@ export default function PredictionWidget() {
             <div className="second_cont">
               <div className="content">
                 <div className="d-flex align-items-center mb-3 pb-1">
-                  <ResultPopup
-                    onClose={popupCloseHandler}
-                    show={visibility}
-                    title="Hello Jeetendra"
-                    chart={img}
-                  />
                   <img
                     src={logo}
                     alt="login form"
@@ -227,6 +216,7 @@ export default function PredictionWidget() {
                     Predict
                   </button>
                 </div>
+                <img src={img} alt="chart" style={{ visibility: visibility }} />
               </div>
             </div>
           </div>
