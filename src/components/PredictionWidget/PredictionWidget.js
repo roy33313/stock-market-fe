@@ -94,7 +94,7 @@ export default function PredictionWidget() {
                       color: "#fff",
                       position: "relative",
                       left: "60%",
-                      marginTop: "-15%",
+                      marginTop: "-9%",
                       marginBottom: "15%",
                     }}
                   >
@@ -120,7 +120,7 @@ export default function PredictionWidget() {
                       width: "1900%",
                       position: "relative",
                       right: "2000%",
-                      bottom: "1250%",
+                      bottom: "1000%",
                       border: "2px solid blue",
                       borderRadius: "10%",
                     }}
