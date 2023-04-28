@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { inputValidation } from "../../utils/registerUtils";
 import registerImage from "../../assets/images/Register/Register Image.jpg";
-import bgImage from "../../assets/images/common/bg.mp4"
-import "./RegisterWidget.css"
+import bgImage from "../../assets/images/common/bg.mp4";
+import "./RegisterWidget.css";
 import { register } from "../../serverQueries/register/register";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +16,7 @@ export default function RegisterWidget() {
 
   const navigate = useNavigate();
 
-  const handleRegistration = () => {
+  const handleRegistration = async () => {
     const validate = inputValidation(
       firstName,
       lastName,
@@ -25,6 +25,16 @@ export default function RegisterWidget() {
       password,
       confirmPassword
     );
+
+    const validation = await fetch(
+      `https://api.zerobounce.net/v2/validate?api_key=7650e298753e4ddd93ef473b5b95ee9c&email=${email}&ip_address=_`
+    );
+    const validationJson = await validation.json();
+
+    if (validationJson.status === "invalid") {
+      alert("Email doesnt exist");
+      return;
+    }
 
     if (validate.error) {
       alert(validate.message);
@@ -70,10 +80,10 @@ export default function RegisterWidget() {
   };
 
   return (
-    <section className="h-100 " style={{ backgroundImage:`url(${bgImage})`}}>
+    <section className="h-100 " style={{ backgroundImage: `url(${bgImage})` }}>
       <div>
         <video loop autoPlay muted id="bg-video">
-          <source src={bgImage} type="video/mp4"/>
+          <source src={bgImage} type="video/mp4" />
         </video>
       </div>
       <div className="container  h-100">
@@ -83,8 +93,11 @@ export default function RegisterWidget() {
               className="card card-registration my-4 "
               style={{ borderRadius: "1rem" }}
             >
-              <div className="row g-0" style={{backgroundColor:"#010c12"}}>
-                <div className="col-xs-6 col-sm-5 d-none d-sm-block" style={{backgroundColor:"#010c12"}}>
+              <div className="row g-0" style={{ backgroundColor: "#010c12" }}>
+                <div
+                  className="col-xs-6 col-sm-5 d-none d-sm-block"
+                  style={{ backgroundColor: "#010c12" }}
+                >
                   <img
                     src={registerImage}
                     className="img-fluid"
@@ -92,7 +105,10 @@ export default function RegisterWidget() {
                     style={{ borderRadius: "1rem 0 0 1rem" }}
                   />
                 </div>
-                <div className="col-xl-6" style={{backgroundColor:"#010c12"}}>
+                <div
+                  className="col-xl-6"
+                  style={{ backgroundColor: "#010c12" }}
+                >
                   <div className="card-body p-md-5 text-white">
                     <h3 className="mb-5 text-uppercase">Sign Up</h3>
                     <div className="row">
