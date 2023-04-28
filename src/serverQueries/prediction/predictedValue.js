@@ -15,7 +15,7 @@ const prediction = async (stock, setChartImg, setPredictedVaue) => {
   setPredictedVaue(responseData1.predicted_main_out);
 
   const response2 = await fetch(
-    "http://localhost:5000/predict/getImage?graph=chart"
+    "http://127.0.0.1:5000/predict/getImage?graph=chart"
   );
   const responseData2 = await response2.blob();
   const chartURL = URL.createObjectURL(responseData2);
