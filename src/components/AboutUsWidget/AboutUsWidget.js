@@ -12,22 +12,24 @@ export default function AboutUsWidget() {
       <div className="about-us">
         <div className="about">
           <img
-            src="https://news.maxabout.com/wp-content/uploads/2017/02/kawasaki-ninja-h2r-5.jpg"
+            src="https://miro.medium.com/v2/resize:fit:1400/1*YZ2fsT9k1CmlMil-Fda0Zg.png"
             className="pic"
             alt="fallback"
           />
           <div className="text">
             <h2>About Us</h2>
             <h5>
-              Front-end Developer &amp; <span>Designer</span>
+              Software <span>Engineers</span>
             </h5>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
-              natus ad sed harum itaque ullam enim quas, veniam accusantium,
-              quia animi id eos adipisci iusto molestias asperiores explicabo
-              cum vero atque amet corporis! Soluta illum facere consequuntur
-              magni. Ullam dolorem repudiandae cumque voluptate consequatur
-              consectetur, eos provident necessitatibus reiciendis corrupti!
+              "We are a group of four individuals who are pursuing our education
+              in the field of software engineering. We have come together to
+              work on various software development projects and assignments as a
+              team. Each member brings their unique skills and expertise to the
+              table, which helps the group work efficiently and produce
+              high-quality results. Additionally, we have a solid foundation in
+              programming languages, software design, and development
+              methodologies."
             </p>
             <div className="data">
               <a href="/" className="hire">
