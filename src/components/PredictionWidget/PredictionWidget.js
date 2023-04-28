@@ -14,7 +14,7 @@ export default function PredictionWidget() {
     marginTop: "20%",
   };
 
-  const [stock, setStock] = useState("20MICRONS.BO");
+  const [stock, setStock] = useState("360ONE.NS");
   const [predictedValue, setPredictedVaue] = useState(0);
   const [chartImg, setChartImg] = useState("");
   const [loading, setLoading] = useState(false);
