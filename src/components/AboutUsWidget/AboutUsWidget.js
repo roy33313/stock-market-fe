@@ -12,7 +12,7 @@ export default function AboutUsWidget() {
       <div className="about-us">
         <div className="about">
           <img
-            src="https://miro.medium.com/v2/resize:fit:1400/1*YZ2fsT9k1CmlMil-Fda0Zg.png"
+            src="https://wallpapercave.com/wp/wp10468954.jpg"
             className="pic"
             alt="fallback"
           />

@@ -8,7 +8,7 @@ export default function NewsCard(props) {
           src={
             props.obj.urlToImage
               ? props.obj.urlToImage
-              : "https://t4.ftcdn.net/jpg/02/66/72/41/240_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg"
+              : "https://wallpapercave.com/wp/wp10468950.jpg"
           }
           className="card-img-top"
           alt="NOT AVAILABLE"
